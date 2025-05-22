@@ -20,7 +20,7 @@ export default function Contact() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
-  const whatsappLink = "https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto.";
+  const whatsappLink = "https://wa.me/5516982711425?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto.";
 
   return (
     <motion.section
@@ -75,7 +75,7 @@ export default function Contact() {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       />
-      
+
       <motion.h2
         className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 text-transparent bg-clip-text mb-6 leading-tight py-4 relative z-10"
         variants={itemVariants}

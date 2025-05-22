@@ -4,9 +4,7 @@ import { motion } from 'framer-motion';
 import {
   Monitor, 
   Server,  
-  Database, 
   Palette,
-  Cloud, 
   GitBranch,
   Zap,
   GraduationCap, 
@@ -40,14 +38,14 @@ const skillsData = [
     id: 'skill-6',
     icon: GitBranch,
     title: 'Controle de Versão',
-    description: 'Uso avançado de Git e GitHub para colaboração eficiente e gestão de código-fonte.',
+    description: 'Uso de Git e GitHub para colaboração eficiente e gestão de código-fonte.',
     color: 'pink',
   },
   {
     id: 'skill-7',
     icon: Zap,
-    title: 'Otimização de Performance',
-    description: 'Foco em otimização de código e carregamento para garantir aplicações rápidas e eficientes.',
+    title: 'Acessibilidade e SEO',
+    description: 'Foco em acessibilidade e SEO para garantir aplicações inclusivas, bem posicionadas nos mecanismos de busca e com excelente usabilidade para todos os usuários.',
     color: 'fuchsia',
   },
   {
