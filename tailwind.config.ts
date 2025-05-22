@@ -11,6 +11,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: '#222A36', // Azul
+        secondary: '#9333EA', // Roxo
+        accent: '#F59E0B', // Amarelo
       },
     },
   },

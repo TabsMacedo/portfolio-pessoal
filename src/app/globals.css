@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-lg transition-all duration-300 ease-in-out hover:bg-white/10 hover:shadow-xl;
+}
+
+/* Para um card mais vibrante, se o fundo permitir */
+.glass-card-vibrant {
+  @apply bg-gradient-to-br from-fuchsia-600/20 to-pink-600/10 backdrop-blur-md border border-fuchsia-400/20 rounded-xl p-6 shadow-xl transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-2xl;
+}
+
+/* Adicione esta classe para a rolagem horizontal */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,4 +36,15 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #555;
 }
