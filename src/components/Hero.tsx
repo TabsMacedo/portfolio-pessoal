@@ -49,7 +49,7 @@ export default function Hero() {
     },
   };
 
-  const whatsappLink = "https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto.";
+  const whatsappLink = "https://wa.me/5516982711425?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto.";
 
   return (
     <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center py-16 px-4 md:py-0 overflow-hidden">
