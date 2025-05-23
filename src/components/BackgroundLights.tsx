@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 export default function BackgroundLights() {
   return (
     <>
-      {/* Luz 1: Canto superior esquerdo - Grande e sutil (5%) */}
       <motion.div
         className="absolute top-[8%] left-[8%] w-64 h-64 bg-fuchsia-400 rounded-full mix-blend-screen opacity-[5%] filter blur-3xl z-0 pointer-events-none"
         animate={{
@@ -16,7 +15,6 @@ export default function BackgroundLights() {
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 0.1 }}
       />
-      {/* Luz 2: Meio-superior direita - Grande e sutil (5%) */}
       <motion.div
         className="absolute top-[8%] left-[55%] w-80 h-80 bg-fuchsia-400 rounded-full mix-blend-screen opacity-[5%] filter blur-3xl z-0 pointer-events-none"
         animate={{
@@ -26,7 +24,7 @@ export default function BackgroundLights() {
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
       />
-      {/* Luz 3: Meio-direita - Grande e sutil (10%) */}
+
       <motion.div
         className="absolute top-[40%] right-[15%] -translate-y-1/2 w-96 h-96 bg-fuchsia-400 rounded-full mix-blend-screen opacity-[10%] filter blur-3xl z-0 pointer-events-none"
         animate={{
@@ -37,7 +35,6 @@ export default function BackgroundLights() {
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 3.0 }}
       />
 
-      {/* Luz 4: Meio-esquerda - Grande e sutil (10%) */}
       <motion.div
         className="absolute top-[30%] left-[15%] w-80 h-80 bg-fuchsia-400 rounded-full mix-blend-screen opacity-[10%] filter blur-3xl z-0 pointer-events-none"
         animate={{
@@ -47,7 +44,7 @@ export default function BackgroundLights() {
         }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
       />
-      {/* Luz 5: Parte inferior esquerda - Grande e sutil (10%) */}
+
       <motion.div
         className="absolute top-[60%] left-[10%] w-80 h-80 bg-fuchsia-400 rounded-full mix-blend-screen opacity-[10%] filter blur-3xl z-0 pointer-events-none"
         animate={{
@@ -58,7 +55,6 @@ export default function BackgroundLights() {
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 4.2 }}
       />
 
-      {/* Luz 6: Parte inferior direita - Média e fúcsia (10%) */}
       <motion.div
         className="absolute top-[70%] right-[15%] w-60 h-60 bg-fuchsia-400 rounded-full mix-blend-screen opacity-[10%] filter blur-3xl z-0 pointer-events-none"
         animate={{
@@ -68,7 +64,6 @@ export default function BackgroundLights() {
         }}
         transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
       />
-      {/* Luz 7: Parte superior central - Grande e mais evidente (15%) */}
       <motion.div
         className="absolute top-[4%] left-1/2 -translate-x-1/2 w-96 h-96 bg-fuchsia-400 rounded-full mix-blend-screen opacity-[15%] filter blur-3xl z-0 pointer-events-none"
         animate={{

@@ -2,7 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Instagram } from 'lucide-react'; // Ícones para redes sociais
+import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
 
 export default function Footer() {
   const footerVariants = {
