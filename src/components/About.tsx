@@ -154,7 +154,7 @@ export default function Skills() {
                      text-fuchsia-300 hover:text-white hover:bg-fuchsia-600/20
                      shadow-lg transform hover:scale-105"
         >
-          hello@tabatamacedo.com
+          tabata.macedo1897@gmail.com
         </a>
       </motion.div>
     </motion.section>
