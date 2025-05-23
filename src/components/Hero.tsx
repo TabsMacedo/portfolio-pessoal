@@ -126,7 +126,7 @@ export default function Hero() {
               download
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-fuchsia-300 font-semibold border-2 border-fuchsia-500 hover:border-pink-500 transition-all duration-300 ease-in-out hover:text-white hover:bg-fuchsia-600/20 transform hover:scale-105"
             >
-              <Download size={20} /> Meu Trabalho
+              <Download size={20} /> Meu currículo
             </a>
           </motion.div>
         </div>
