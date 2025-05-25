@@ -139,7 +139,7 @@ export default function Projects() {
       id="projects"
       className="w-full max-w-7xl mx-auto py-16 px-4 md:py-24 text-center relative overflow-hidden"
     >
-      <div className="mb-12"> {/* Removi a classe animate-fade-in-up para o título, caso você não queira nenhuma animação */}
+      <div className="mb-12"> 
         <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 text-transparent bg-clip-text leading-tight py-4">
           Meus Projetos
         </h2>
@@ -152,21 +152,19 @@ export default function Projects() {
           grabCursor
           centeredSlides
           loop
-          // **** ALTERAÇÕES CHAVE AQUI PARA MOBILE ****
-          slidesPerView={'auto'} // 'auto' é melhor para mobile, permite que o Swiper calcule
+          slidesPerView={'auto'}
+          speed={600}
           coverflowEffect={{
-            rotate: 0,   // Reduz a rotação para mobile para evitar cortes
+            rotate: 0, 
             stretch: 0,
-            depth: 100,  // Ajusta a profundidade
-            modifier: 1, // Torna o efeito menos agressivo para mobile
+            depth: 100, 
+            modifier: 1,
             slideShadows: false,
           }}
-          // **** BREAKPOINTS AJUSTADOS ****
           breakpoints={{
-            // Pequenas telas (mobile)
             320: {
-              slidesPerView: 1, // Apenas um slide por vez em telas muito pequenas
-              spaceBetween: 10, // Espaço entre os slides (opcional)
+              slidesPerView: 1, 
+              spaceBetween: 10,
               coverflowEffect: {
                 rotate: 0,
                 stretch: 0,
@@ -175,9 +173,8 @@ export default function Projects() {
                 slideShadows: false,
               },
             },
-            // Telas um pouco maiores (tablets pequenos)
             640: {
-              slidesPerView: 2, // 2 slides em telas médias
+              slidesPerView: 2, 
               spaceBetween: 20,
               coverflowEffect: {
                 rotate: 10,
@@ -187,9 +184,8 @@ export default function Projects() {
                 slideShadows: false,
               },
             },
-            // Telas grandes (desktops)
             1024: {
-              slidesPerView: 3, // 3 slides em telas maiores
+              slidesPerView: 3,
               spaceBetween: 30,
               coverflowEffect: {
                 rotate: 5,

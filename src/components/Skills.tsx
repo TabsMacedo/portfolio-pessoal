@@ -1,10 +1,5 @@
 'use client';
 
-// Removemos o import de 'motion' do 'framer-motion'
-// E também o useInView
-// import { motion } from 'framer-motion';
-// import { useInView } from 'react-intersection-observer';
-
 import {
   Monitor,
   Server,
@@ -14,19 +9,18 @@ import {
   GraduationCap,
   ArrowUpRight,
 } from 'lucide-react';
-import React from 'react'; // Apenas o React básico é necessário
+import React from 'react'; 
 
-// Mapeamento de classes Tailwind completas para as cores
 const colorClasses = {
   fuchsia: {
     bg: 'bg-fuchsia-400/20',
     text: 'text-fuchsia-400 group-hover:text-fuchsia-300',
-    hoverShadow: 'hover:shadow-fuchsia-500/20', // Para o card em si
+    hoverShadow: 'hover:shadow-fuchsia-500/20', 
   },
   pink: {
     bg: 'bg-pink-400/20',
     text: 'text-pink-400 group-hover:text-pink-300',
-    hoverShadow: 'hover:shadow-pink-500/20', // Para o card em si
+    hoverShadow: 'hover:shadow-pink-500/20',
   },
 };
 
@@ -43,12 +37,10 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      // Removemos todas as props de animação e o ref do useInView
       className="w-full max-w-7xl mx-auto py-16 px-4 md:py-24 z-10"
     >
       <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
         <div className="md:w-1/2">
-          {/* Removemos as classes de animação daqui */}
           <div>
             <p className="text-fuchsia-400 text-base uppercase tracking-widest font-bold mb-2">
               Serviços
@@ -58,7 +50,6 @@ export default function Skills() {
             </h2>
           </div>
         </div>
-        {/* Removemos as classes de animação daqui também */}
         <div className="md:w-1/2 text-gray-300 text-lg md:text-xl leading-relaxed mt-2">
           <p>
             Transformo ideias complexas em soluções digitais elegantes e intuitivas, combinando proficiência técnica com um olhar apurado para a experiência do usuário.
@@ -73,7 +64,6 @@ export default function Skills() {
           return (
             <div
               key={skill.id}
-              // Removemos todas as classes de animação como 'animate-card-appear' e 'delay-...'
               className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col items-start shadow-lg ${skillColorClasses.hoverShadow} transition-all duration-300 ease-in-out group`}
             >
               <div className={`flex items-center justify-center w-16 h-16 ${skillColorClasses.bg} rounded-full mb-4`}>
@@ -88,7 +78,6 @@ export default function Skills() {
       </div>
 
       <div
-        // Removemos todas as classes de animação daqui também
         className="border border-white/10 rounded-xl p-8 flex flex-col items-center justify-center text-center mt-12 md:mt-16 shadow-lg hover:shadow-pink-500/20 transition-all duration-300 ease-in-out"
       >
         <p className="text-gray-300 text-lg mb-6">Entre em contato</p>
