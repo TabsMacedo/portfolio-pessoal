@@ -1,8 +1,8 @@
+// layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Hero from "@/components/Hero";
-import BackgroundLights from "@/components/BackgroundLights";
 import Footer from "@/components/Footer";
+
 
 export const metadata: Metadata = {
   title: "Tábata Macedo",
@@ -16,9 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-gradient-to-tr from-black via-zinc-900 to-black text-white font-sans relative">
-        <Hero />
-         <BackgroundLights />
+      <body className="bg-gradient-to-tr from-black via-zinc-900 to-black text-white font-sans relative overflow-x-hidden">
         {children}
         <Footer />
       </body>

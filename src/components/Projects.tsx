@@ -1,9 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, CodeXml, LayoutDashboard, BookOpen, ChevronLeft, ChevronRight, Activity } from 'lucide-react';
+import {
+  Github,
+  ExternalLink,
+  CodeXml,
+  LayoutDashboard,
+  BookOpen,
+  ChevronLeft,
+  ChevronRight,
+  Activity,
+} from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -26,53 +35,51 @@ const projects: ProjectProps[] = [
   {
     id: 'register-students',
     title: 'Register Students API',
-    description: 'API robusta com autenticação e arquitetura escalável para gestão educacional. Foco em segurança e clareza para controle de alunos.',
+    description: 'API robusta com autenticação e arquitetura escalável para gestão educacional.',
     githubLink: 'https://github.com/TabsMacedo/register-students',
     tags: ['Node.js', 'Express', 'JWT', 'MySQL', 'API REST'],
     icon: CodeXml,
-    imageUrl: '/img/api.png',
+    imageUrl: '/img/api.webp',
   },
   {
     id: 'corredores-voluntarios',
     title: 'Corredores Voluntários',
-    description: 'Site institucional e plataforma para organização de eventos e comunicação para corredores voluntários, focado em acessibilidade e impacto social.',
+    description: 'Site institucional para eventos e comunicação de corredores voluntários.',
     githubLink: 'https://github.com/TabsMacedo/projeto-corvo',
     liveLink: 'https://corredoresvoluntarios.org.br/',
     tags: ['HTML', 'CSS', 'Javascript', 'UI/UX', 'Responsivo'],
     icon: BookOpen,
-    imageUrl: '/img/corvo.png',
+    imageUrl: '/img/corvo.webp',
   },
   {
     id: 'modern-portfolio',
     title: 'Portfólio Moderno',
-    description: 'Este site que você está navegando! Construído com Next.js 14, Tailwind CSS e Framer Motion para animações suaves, focado em clareza, responsividade e estilo profissional.',
+    description: 'Este site! Com Next.js 14, Tailwind e Framer Motion para animações suaves.',
     githubLink: 'https://github.com/TabsMacedo/portfolio',
     liveLink: '/',
     tags: ['Next.js 14', 'React', 'UI/UX', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     icon: LayoutDashboard,
-    imageUrl: '/img/portfolio.png',
+    imageUrl: '/img/portfolio.webp',
   },
   {
     id: 'painel-coronavirus',
-    title: 'Painel Informativo sobre o Coronavírus',
-    description: 'Dashboard interativo para visualização de dados do Coronavírus, com gráficos e informações atualizadas em tempo real, desenvolvido para análise e acompanhamento.',
+    title: 'Painel Coronavírus',
+    description: 'Dashboard de dados sobre o Coronavírus com visualizações e filtros.',
     githubLink: 'https://github.com/TabsMacedo/projeto-kidopi',
     tags: ['PHP', 'MVC', 'PDO', 'Data Visualization', 'Dashboard'],
     icon: Activity,
-    imageUrl: '/img/coronavirus.png',
-  }
+    imageUrl: '/img/coronavirus.webp',
+  },
 ];
 
 function ProjectCard({ project }: { project: ProjectProps }) {
-  const [imgSrc, setImgSrc] = useState(project.imageUrl ?? '');
-
   return (
     <motion.div
-      className="glass-card text-left flex flex-col justify-between w-[500px] h-[650px] hover:border-fuchsia-500/50 group transition-transform duration-300 hover:scale-105 mx-auto"
-      variants={{
-        hidden: { opacity: 0, scale: 0.8, y: 20 },
-        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
-      }}
+      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="glass-card text-left flex flex-col justify-between w-full max-w-[500px] h-[600px] sm:h-[650px] hover:border-fuchsia-500/50 group transition-transform duration-300 hover:scale-105 mx-auto"
     >
       <div className="mb-4">
         <div className="flex items-center gap-3 mb-2">
@@ -81,20 +88,19 @@ function ProjectCard({ project }: { project: ProjectProps }) {
         </div>
         <p className="text-white text-base leading-relaxed">{project.description}</p>
       </div>
-      {imgSrc && (
-        <div className="mb-4 rounded-lg overflow-hidden">
+
+      {project.imageUrl && (
+        <div className="mb-4 rounded-lg overflow-hidden relative w-full h-48 sm:h-72">
           <Image
-            src={imgSrc}
+            src={project.imageUrl}
             alt={`Imagem do projeto ${project.title}`}
-            width={400}
-            height={300}
-            className="w-full h-[300px] object-cover"
-            onError={() =>
-              setImgSrc('https://placehold.co/400x300/cccccc/000000?text=Imagem+Indisponível')
-            }
+            fill
+            sizes="100vw"
+            className="object-cover"
           />
         </div>
       )}
+
       <div className="flex flex-wrap gap-2 mt-4 mb-4">
         {project.tags.map((tag) => (
           <span
@@ -105,6 +111,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
           </span>
         ))}
       </div>
+
       <div className="flex flex-wrap gap-4 mt-auto">
         <a
           href={project.githubLink}
@@ -112,8 +119,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-fuchsia-400 hover:text-fuchsia-300 font-semibold transition-colors group"
         >
-          <Github size={18} /> Ver no GitHub{' '}
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+          <Github size={18} /> Ver no GitHub <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
         </a>
         {project.liveLink && (
           <a
@@ -122,8 +128,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 font-semibold transition-colors group"
           >
-            <ExternalLink size={18} /> Demo ao Vivo{' '}
-            <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            <ExternalLink size={18} /> Demo ao Vivo <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
           </a>
         )}
       </div>
@@ -132,48 +137,31 @@ function ProjectCard({ project }: { project: ProjectProps }) {
 }
 
 export default function Projects() {
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
-  };
-
   return (
-    <motion.section
+    <section
       id="projects"
-      className="w-full max-w-6xl mx-auto py-16 px-4 md:py-24 text-center relative"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
+      className="w-full max-w-7xl mx-auto py-16 px-4 md:py-24 text-center relative overflow-hidden"
     >
-      <motion.h2
-        className="text-7xl md:text-8xl font-extrabold bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 text-transparent bg-clip-text mb-12 leading-tight py-4"
-        variants={titleVariants}
+      <motion.div
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-12"
       >
-        Meus Projetos
-      </motion.h2>
+        <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 text-transparent bg-clip-text leading-tight py-4">
+          Meus Projetos
+        </h2>
+      </motion.div>
 
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <Swiper
           modules={[Navigation, Pagination, EffectCoverflow]}
           effect="coverflow"
-          grabCursor={true}
-          centeredSlides={true}
+          grabCursor
+          centeredSlides
           slidesPerView={1}
-          loop={true}
+          loop
           coverflowEffect={{
             rotate: 20,
             stretch: 0,
@@ -189,18 +177,16 @@ export default function Projects() {
           breakpoints={{
             640: {
               slidesPerView: 2,
-              spaceBetween: 0,
               coverflowEffect: {
-                rotate: 15,
+                rotate: 10,
                 depth: 150,
                 modifier: 0.7,
               },
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 0,
               coverflowEffect: {
-                rotate: 10,
+                rotate: 5,
                 depth: 100,
                 modifier: 0.5,
               },
@@ -214,14 +200,15 @@ export default function Projects() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-button-prev-custom absolute top-1/2 -translate-y-1/2 left-0 md:-left-16 z-20 cursor-pointer p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-white shadow-lg">
-          <ChevronLeft size={32} />
+
+        <div className="swiper-button-prev-custom absolute top-1/2 -translate-y-1/2 left-2 md:left-1 z-20 cursor-pointer p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-white shadow-lg">
+          <ChevronLeft size={28} />
         </div>
-        <div className="swiper-button-next-custom absolute top-1/2 -translate-y-1/2 right-0 md:-right-16 z-20 cursor-pointer p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-white shadow-lg">
-          <ChevronRight size={32} />
+        <div className="swiper-button-next-custom absolute top-1/2 -translate-y-1/2 right-2 md:right-4 z-20 cursor-pointer p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-white shadow-lg">
+          <ChevronRight size={28} />
         </div>
-        <div className="swiper-pagination-custom absolute -bottom-10 left-1/2 -translate-x-1/2 w-full max-w-4xl flex justify-center gap-3 text-white text-sm"></div>
+        <div className="swiper-pagination-custom absolute -bottom-10 left-1/2 -translate-x-1/2 w-full max-w-4xl flex justify-center gap-3 text-white text-sm" />
       </div>
-    </motion.section>
+    </section>
   );
 }
