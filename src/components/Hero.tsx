@@ -8,7 +8,7 @@ export default function Hero() {
     'https://wa.me/5516982711425?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto.';
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center py-16 px-4 md:py-0 overflow-hidden">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center py-16 px-4 md:py-0">
       <div className="hidden md:block absolute top-1/2 left-0 w-24 h-[1px] bg-fuchsia-400 opacity-50 rotate-45 z-0 pointer-events-none" />
       <div className="hidden md:block absolute bottom-1/2 right-0 w-24 h-[1px] bg-pink-400 opacity-50 -rotate-45 z-0 pointer-events-none" />
 
@@ -40,20 +40,22 @@ export default function Hero() {
             impactantes. Vamos construir algo incrível juntos?
           </p>
 
-          {/* Ajustes aqui */}
+          {/* Botões ajustados */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start animate-fadeInUp delay-600">
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 text-base sm:px-6 sm:py-3 sm:text-base rounded-lg text-fuchsia-300 font-semibold transition-all duration-300 ease-in-out bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 shadow-lg transform hover:scale-105 hover:text-white"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 text-base sm:px-6 sm:py-3 rounded-lg text-fuchsia-300 font-semibold transition-transform transition-colors duration-500 ease-in-out bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 shadow-lg transform hover:scale-105 hover:text-white will-change-transform will-change-color"
+              style={{ transformOrigin: 'center' }}
             >
               <MessageCircleMore size={20} /> Fale Comigo
             </a>
             <a
               href="/curriculo_tabata_macedo.pdf"
               download
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 text-base sm:px-6 sm:py-3 sm:text-base rounded-lg text-fuchsia-300 font-semibold border-2 border-fuchsia-500 hover:border-pink-500 transition-all duration-300 ease-in-out hover:text-white hover:bg-fuchsia-600/20 transform hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 text-base sm:px-6 sm:py-3 rounded-lg text-fuchsia-300 font-semibold border-2 border-fuchsia-500 hover:border-pink-500 transition-colors transition-transform duration-500 ease-in-out hover:text-white hover:bg-fuchsia-600/20 transform hover:scale-105 will-change-transform will-change-color"
+              style={{ transformOrigin: 'center' }}
             >
               <Download size={20} /> Meu currículo
             </a>
