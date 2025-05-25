@@ -9,9 +9,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center py-16 px-4 md:py-0">
-      <div className="hidden md:block absolute top-1/2 left-0 w-24 h-[1px] bg-fuchsia-400 opacity-50 rotate-45 z-0 pointer-events-none" />
-      <div className="hidden md:block absolute bottom-1/2 right-0 w-24 h-[1px] bg-pink-400 opacity-50 -rotate-45 z-0 pointer-events-none" />
-
+    
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full max-w-7xl mx-auto gap-12 md:gap-16 animate-fadeInSlow">
         <div className="flex-1 flex flex-col gap-6 text-center md:text-left md:max-w-2xl px-4 md:px-0">
           <p className="text-fuchsia-400 text-base uppercase tracking-widest font-bold animate-fadeInUp delay-100">

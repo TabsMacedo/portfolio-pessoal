@@ -34,6 +34,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+
 }
 html {
   scroll-behavior: smooth;
@@ -46,4 +47,10 @@ a {
 
 a:hover {
   color: #555;
+}
+
+@media (max-width: 1023px) {
+  html {
+    overflow-x: hidden;
+  }
 }

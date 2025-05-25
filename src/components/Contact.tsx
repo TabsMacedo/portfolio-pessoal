@@ -1,106 +1,59 @@
+// components/Contact.tsx
+
 'use client';
 
-import { motion } from 'framer-motion';
+// Removemos o import de 'motion' do 'framer-motion'
+// import { motion } from 'framer-motion';
 import { MessageCircleMore } from 'lucide-react';
+import React from 'react'; // Importe React se já não estiver importado implicitamente
 
 export default function Contact() {
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-        staggerChildren: 0.15,
-      },
-    },
-  };
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
   const whatsappLink = "https://wa.me/5516982711425?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto.";
 
   return (
-    <motion.section
+    <section
       id="contact"
+      // Removemos todas as props de animação do Framer Motion
       className="w-full max-w-3xl mx-auto py-24 px-4 md:py-32 text-center z-10 relative overflow-hidden mb-20"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={sectionVariants}
     >
-      <motion.div
+
+      {/* A esfera gradiente de fundo foi convertida para uma div normal sem animação */}
+      <div
         className="absolute inset-0 w-full h-full bg-gradient-to-br from-fuchsia-400/10 via-pink-400/10 to-transparent rounded-full mix-blend-screen opacity-[10%] filter blur-3xl z-0 pointer-events-none"
-        animate={{
-          scale: [1, 1.05, 1],
-          rotate: [0, 5, 0],
-        }}
-      />
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-64 h-64 bg-fuchsia-300/10 rounded-full mix-blend-screen opacity-[10%] filter blur-3xl z-0 pointer-events-none"
-        animate={{
-          x: [0, 20, 0],
-          y: [0, -15, 0],
-        }}
-      />
-      <motion.div
-        className="absolute top-[10%] left-0 w-32 h-[2px] bg-fuchsia-400 opacity-[10%] rotate-45 z-0 hidden md:block"
-        initial={{ opacity: 0, scaleX: 0, x: -50 }}
-        whileInView={{ opacity: 0.3, scaleX: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
       />
 
-      <motion.div
-        className="absolute bottom-1/4 right-0 w-32 h-[2px] bg-fuchsia-400 opacity-[20%] -rotate-45 z-0 hidden md:block"
-        initial={{ opacity: 0, scaleX: 0, x: 50 }}
-        whileInView={{ opacity: 0.4, scaleX: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-      />
+      {/* Linhas de fundo: mantidas como estão, sem animação contínua */}
+      <div className="absolute top-1/4 left-0 w-24 h-[1px] bg-fuchsia-400 opacity-50 rotate-45 z-0 hidden md:block" />
+      <div className="absolute bottom-1/4 right-0 w-24 h-[1px] bg-pink-400 opacity-50 -rotate-45 z-0 hidden md:block" />
 
-      <motion.div
-        className="absolute top-5 right-1/4 w-20 h-[1px] bg-fuchsia-300 opacity-[20%] rotate-12 z-0 hidden md:block"
-        initial={{ opacity: 0, scaleX: 0, x: 30 }}
-        whileInView={{ opacity: 0.5, scaleX: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-      />
-
-      <motion.div
-        className="absolute bottom-5 left-1/4 w-20 h-[1px] bg-fuchsia-400 opacity-[15%] -rotate-12 z-0 hidden md:block"
-        initial={{ opacity: 0, scaleX: 0, x: -30 }}
-        whileInView={{ opacity: 0.3, scaleX: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-      />
-
-      <motion.div variants={itemVariants}>
+      {/* Os elementos de texto e o botão também foram convertidos para divs/elementos normais */}
+      <div> {/* Era <motion.div variants={itemVariants}> */}
         <h2 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 text-transparent bg-clip-text mb-6 leading-tight py-4 relative z-10">
           Vamos conversar?
         </h2>
-      </motion.div>
+      </div>
 
-      <motion.div variants={itemVariants}>
+      <div> {/* Era <motion.div variants={itemVariants}> */}
         <p className="text-gray-300 text-lg leading-relaxed mb-10 md:text-xl relative z-10">
           Pronta para transformar sua ideia em realidade? Me envie uma mensagem direta no WhatsApp.
           Será um prazer discutir seu projeto e como posso ajudar a construir algo incrível.
         </p>
-      </motion.div>
+      </div>
 
-      <motion.div variants={itemVariants}>
+      <div> {/* Era <motion.div variants={itemVariants}> */}
         <a
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold transition-all duration-300 ease-in-out
-               bg-white/5 backdrop-blur-sm border border-fuchsia-500 hover:border-pink-500
-               text-fuchsia-300 hover:text-white hover:bg-fuchsia-600/20
-               shadow-lg transform hover:scale-105 hover:shadow-fuchsia-500/30 relative z-10"
+                       bg-white/5 backdrop-blur-sm border border-fuchsia-500 hover:border-pink-500
+                       text-fuchsia-300 hover:text-white hover:bg-fuchsia-600/20
+                       shadow-lg transform hover:scale-105 hover:shadow-fuchsia-500/30 relative z-10"
         >
           <MessageCircleMore size={20} /> Conversar no WhatsApp
         </a>
-      </motion.div>
+      </div>
 
-    </motion.section>
+    </section>
   );
 }

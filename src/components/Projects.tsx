@@ -1,6 +1,6 @@
 'use client';
+
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import {
   Github,
   ExternalLink,
@@ -11,6 +11,8 @@ import {
   ChevronRight,
   Activity,
 } from 'lucide-react';
+
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -52,10 +54,10 @@ const projects: ProjectProps[] = [
   {
     id: 'modern-portfolio',
     title: 'Portfólio Moderno',
-    description: 'Este site! Com Next.js 14, Tailwind e Framer Motion para animações suaves.',
+    description: 'Este site! Com Next.js 14, Tailwind.',
     githubLink: 'https://github.com/TabsMacedo/portfolio',
     liveLink: '/',
-    tags: ['Next.js 14', 'React', 'UI/UX', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    tags: ['Next.js 14', 'React', 'UI/UX', 'TypeScript', 'Tailwind CSS'],
     icon: LayoutDashboard,
     imageUrl: '/img/portfolio.webp',
   },
@@ -72,11 +74,7 @@ const projects: ProjectProps[] = [
 
 function ProjectCard({ project }: { project: ProjectProps }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95, y: 20 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+    <div
       className="glass-card text-left flex flex-col justify-between w-full max-w-[500px] h-[600px] sm:h-[650px] hover:border-fuchsia-500/50 group transition-transform duration-300 hover:scale-105 mx-auto"
     >
       <div className="mb-4">
@@ -95,6 +93,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
             fill
             sizes="100vw"
             className="object-cover"
+            priority={project.id === 'modern-portfolio'}
           />
         </div>
       )}
@@ -130,7 +129,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
           </a>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -140,17 +139,11 @@ export default function Projects() {
       id="projects"
       className="w-full max-w-7xl mx-auto py-16 px-4 md:py-24 text-center relative overflow-hidden"
     >
-      <motion.div
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mb-12"
-      >
+      <div className="mb-12"> {/* Removi a classe animate-fade-in-up para o título, caso você não queira nenhuma animação */}
         <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 text-transparent bg-clip-text leading-tight py-4">
           Meus Projetos
         </h2>
-      </motion.div>
+      </div>
 
       <div className="relative overflow-hidden">
         <Swiper
@@ -158,38 +151,60 @@ export default function Projects() {
           effect="coverflow"
           grabCursor
           centeredSlides
-          slidesPerView={1}
           loop
+          // **** ALTERAÇÕES CHAVE AQUI PARA MOBILE ****
+          slidesPerView={'auto'} // 'auto' é melhor para mobile, permite que o Swiper calcule
           coverflowEffect={{
-            rotate: 20,
+            rotate: 0,   // Reduz a rotação para mobile para evitar cortes
             stretch: 0,
-            depth: 200,
-            modifier: 0.5,
+            depth: 100,  // Ajusta a profundidade
+            modifier: 1, // Torna o efeito menos agressivo para mobile
             slideShadows: false,
+          }}
+          // **** BREAKPOINTS AJUSTADOS ****
+          breakpoints={{
+            // Pequenas telas (mobile)
+            320: {
+              slidesPerView: 1, // Apenas um slide por vez em telas muito pequenas
+              spaceBetween: 10, // Espaço entre os slides (opcional)
+              coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+              },
+            },
+            // Telas um pouco maiores (tablets pequenos)
+            640: {
+              slidesPerView: 2, // 2 slides em telas médias
+              spaceBetween: 20,
+              coverflowEffect: {
+                rotate: 10,
+                stretch: 0,
+                depth: 150,
+                modifier: 0.7,
+                slideShadows: false,
+              },
+            },
+            // Telas grandes (desktops)
+            1024: {
+              slidesPerView: 3, // 3 slides em telas maiores
+              spaceBetween: 30,
+              coverflowEffect: {
+                rotate: 5,
+                stretch: 0,
+                depth: 100,
+                modifier: 0.5,
+                slideShadows: false,
+              },
+            },
           }}
           navigation={{
             nextEl: '.swiper-button-next-custom',
             prevEl: '.swiper-button-prev-custom',
           }}
           pagination={{ clickable: true, el: '.swiper-pagination-custom' }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              coverflowEffect: {
-                rotate: 10,
-                depth: 150,
-                modifier: 0.7,
-              },
-            },
-            1024: {
-              slidesPerView: 3,
-              coverflowEffect: {
-                rotate: 5,
-                depth: 100,
-                modifier: 0.5,
-              },
-            },
-          }}
           className="mySwiper pb-12"
         >
           {projects.map((project) => (
