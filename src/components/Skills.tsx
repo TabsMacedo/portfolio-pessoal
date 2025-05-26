@@ -6,16 +6,15 @@ import {
   Palette,
   GitBranch,
   Zap,
-  GraduationCap,
-  ArrowUpRight,
+  GraduationCap
 } from 'lucide-react';
-import React from 'react'; 
+import React from 'react';
 
 const colorClasses = {
   fuchsia: {
     bg: 'bg-fuchsia-400/20',
     text: 'text-fuchsia-400 group-hover:text-fuchsia-300',
-    hoverShadow: 'hover:shadow-fuchsia-500/20', 
+    hoverShadow: 'hover:shadow-fuchsia-500/20',
   },
   pink: {
     bg: 'bg-pink-400/20',
