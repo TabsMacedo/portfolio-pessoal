@@ -15,7 +15,7 @@ Bem-vindo ao meu portfólio! Aqui você encontra informações sobre minhas skil
 Acesse a demonstração do projeto online:  
 [https://portfolio-pessoal-tab.vercel.app/](https://portfolio-pessoal-tab.vercel.app/)
 
-![Image](https://github.com/user-attachments/assets/ee0526a2-5409-4c92-9a9b-1fec6b1928f3)
+![Image](https://github.com/user-attachments/assets/0a14d442-e009-4747-9ac8-93854328ce7c)
 
 ## 📄 Currículo
 
