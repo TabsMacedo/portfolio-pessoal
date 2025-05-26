@@ -27,7 +27,7 @@ Baixe meu currículo em PDF [aqui](./curriculo_tabata_macedo.pdf)
 
 - [projeto-kidopi](https://github.com/TabsMacedo/projeto-kidopi) — Sistema fullstack usando MVC, PHP e MySQL, que me permitiu aprovação em um processo seletivo.
 
-- Projeto para a Instituição Corredores Voluntários de Campinas — Projeto criado do zero para a venda na instituição, incluindo prototipação, desenvolvimento, hospedagem e configuração de certificado SSL.
+- [projeto-corredores-voluntarios](https://github.com/TabsMacedo/projeto-corvo) Projeto para a Instituição Corredores Voluntários de Campinas — Projeto criado do zero para a venda na instituição, incluindo prototipação, desenvolvimento, hospedagem e configuração de certificado SSL.
 
 ## 📞 Fale Comigo
 
