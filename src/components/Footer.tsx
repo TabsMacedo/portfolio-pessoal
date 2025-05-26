@@ -2,7 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Github, Linkedin, Mail} from 'lucide-react';
 
 export default function Footer() {
   const footerVariants = {
@@ -39,7 +39,7 @@ export default function Footer() {
             <Github size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/tabatamacedo"
+            href="https://www.linkedin.com/in/t%C3%A1bata-macedo-2b7212243/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors duration-300"
@@ -48,20 +48,11 @@ export default function Footer() {
             <Linkedin size={24} />
           </a>
           <a
-            href="mailto:hello@tabatamacedo.com"
+            href="mailto:tabata.macedo1897@gmail.com"
             className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors duration-300"
             aria-label="Email"
           >
             <Mail size={24} />
-          </a>
-          <a
-            href="https://instagram.com/seuinstagram"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors duration-300"
-            aria-label="Instagram"
-          >
-            <Instagram size={24} />
           </a>
         </div>
       </div>

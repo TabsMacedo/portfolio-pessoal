@@ -71,7 +71,6 @@ export default function Skills() {
               </div>
               <h3 className="text-2xl text-white font-bold mb-2">{skill.title}</h3>
               <p className="text-gray-300 text-base leading-relaxed mb-4">{skill.description}</p>
-              <ArrowUpRight size={24} className="text-gray-400 group-hover:text-fuchsia-400 transition-colors duration-300 self-end" />
             </div>
           );
         })}
